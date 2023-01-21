@@ -8,6 +8,7 @@ fn load_music(mut app &mui.Window, mut app_data &AppData, url string, title stri
 	app_data.plays=true
 	set_play_button_state(mut app, true)
 	set_webview_visibility(mut app_data, is_video)
+	app.set_title(title + " | V-Player")
 	unsafe {
 		app_data.app.get_object_by_id("volume_slider")[0]["val"].num=100
 		app.get_object_by_id("now_playing")[0]["text"].str=title.clone()

@@ -8,10 +8,6 @@ if !exists(vmodules_dir()+"/malisipi/mui"){
 
 if !exists(vmodules_dir()+"/malisipi/mui/webview/webview.o"){
 	$if windows {
-		if getenv("W10_SDK")=="" {
-			setenv("W10_SDK", input("SDK Location:"), true)
-		}
-		
 		chdir("${vmodules_dir()}/malisipi/mui/webview/") or {exit(1)}
 		system("build_webview_for_windows.cmd ")
 	}
